@@ -48,11 +48,6 @@
       <param name="downsample_resolution" value="0.1" />
       <!-- ICP, GICP, NDT, GICP_OMP, or NDT_OMP(recommended) -->
       <param name="registration_method" value="NDT_OMP" />
-      <param name="transformation_epsilon" value="0.01"/>
-      <param name="maximum_iterations" value="64"/>
-      <param name="use_reciprocal_correspondences" value="false"/>
-      <param name="gicp_correspondence_randomness" value="20"/>
-      <param name="gicp_max_optimizer_iterations" value="20"/>
       <param name="ndt_resolution" value="1.0" />
       <param name="ndt_num_threads" value="0" />
       <param name="ndt_nn_search_method" value="DIRECT7" />
@@ -92,17 +87,12 @@
     <param name="fix_first_node_stddev" value="10 10 10 1 1 1"/>
     <param name="fix_first_node_adaptive" value="true"/>
     <!-- loop closure params -->
-    <param name="distance_thresh" value="10.0" />
-    <param name="accum_distance_thresh" value="15.0" />
-    <param name="min_edge_interval" value="5.0" />
-    <param name="fitness_score_thresh" value="0.5" />
+    <param name="distance_thresh" value="15.0" />
+    <param name="accum_distance_thresh" value="25.0" />
+    <param name="min_edge_interval" value="15.0" />
+    <param name="fitness_score_thresh" value="2.5" />
     <!-- scan matching params -->
     <param name="registration_method" value="NDT_OMP" />
-    <param name="transformation_epsilon" value="0.01"/>
-    <param name="maximum_iterations" value="64"/>
-    <param name="use_reciprocal_correspondences" value="false"/>
-    <param name="gicp_correspondence_randomness" value="20"/>
-    <param name="gicp_max_optimizer_iterations" value="20"/>
     <param name="ndt_resolution" value="1.0" />
     <param name="ndt_num_threads" value="0" />
     <param name="ndt_nn_search_method" value="DIRECT7" />
