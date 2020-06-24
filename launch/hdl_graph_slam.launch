@@ -2,7 +2,7 @@
 <launch>
   <!-- arguments -->
   <arg name="nodelet_manager" default="velodyne_nodelet_manager" />
-  <arg name="enable_floor_detection" default="false" />
+  <arg name="enable_floor_detection" default="true" />
   <arg name="enable_gps" default="false" />
   <arg name="enable_imu_acc" default="false" />
   <arg name="enable_imu_ori" default="false" />
@@ -16,9 +16,9 @@
 
   <!-- prefiltering_nodelet -->
   <node pkg="nodelet" type="nodelet" name="prefiltering_nodelet" args="load hdl_graph_slam/PrefilteringNodelet $(arg nodelet_manager)">
-    <remap from="/middle/rslidar_points" to="$(arg points_topic)" />
+    <remap from="/velodyne_points" to="/middle/rslidar_points" />
     <!-- in case base_link_frame is blank, mapping will be performed in the lidar frame -->
-    <param name="base_link_frame" value="base_link" />
+    <param name="base_link_frame" value="rslidar" />
     <!-- distance filter -->
     <param name="use_distance_filter" value="true" />
     <param name="distance_near_thresh" value="0.1" />
