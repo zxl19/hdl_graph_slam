@@ -16,7 +16,7 @@
 
   <!-- prefiltering_nodelet -->
   <node pkg="nodelet" type="nodelet" name="prefiltering_nodelet" args="load hdl_graph_slam/PrefilteringNodelet $(arg nodelet_manager)">
-    <remap from="/velodyne_points" to="/middle/rslidar_points" />
+    <remap from="/middle/rslidar_points" to="$(arg points_topic)" />
     <!-- in case base_link_frame is blank, mapping will be performed in the lidar frame -->
     <param name="base_link_frame" value="base_link" />
     <!-- distance filter -->
