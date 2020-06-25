@@ -2,14 +2,14 @@
 <launch>
   <!-- arguments -->
   <arg name="nodelet_manager" default="velodyne_nodelet_manager" />
-  <arg name="enable_floor_detection" default="true" />
+  <arg name="enable_floor_detection" default="false" />
   <arg name="enable_gps" default="false" />
   <arg name="enable_imu_acc" default="false" />
   <arg name="enable_imu_ori" default="false" />
   <arg name="points_topic" default="/middle/rslidar_points" />
 
   <!-- transformation between lidar and base_link -->
-  <node pkg="tf" type="static_transform_publisher" name="lidar2base_publisher" args="0 0 0 0 0 0 base_link rslidar 10" />
+  <node pkg="tf" type="static_transform_publisher" name="lidar2base_publisher" args="0 0 0 0 0 0 base_link middle_lidar 10" />
 
   <!-- in case you use velodyne_driver, comment out the following line -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
