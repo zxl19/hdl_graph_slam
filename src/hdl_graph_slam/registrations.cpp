@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: BSD-2-Clause
+
 #include <hdl_graph_slam/registrations.hpp>
 
 #include <iostream>
@@ -44,7 +46,7 @@ boost::shared_ptr<pcl::Registration<pcl::PointXYZI, pcl::PointXYZI>> select_regi
       return gicp;
     }
   } else {
-    if(registration_method.find("NDT") == std::string::npos ) {
+    if(registration_method.find("NDT") == std::string::npos) {
       std::cerr << "warning: unknown registration type(" << registration_method << ")" << std::endl;
       std::cerr << "       : use NDT" << std::endl;
     }
@@ -70,7 +72,7 @@ boost::shared_ptr<pcl::Registration<pcl::PointXYZI, pcl::PointXYZI>> select_regi
       ndt->setResolution(ndt_resolution);
       if(nn_search_method == "KDTREE") {
         ndt->setNeighborhoodSearchMethod(pclomp::KDTREE);
-      } else if (nn_search_method == "DIRECT1") {
+      } else if(nn_search_method == "DIRECT1") {
         ndt->setNeighborhoodSearchMethod(pclomp::DIRECT1);
       } else {
         ndt->setNeighborhoodSearchMethod(pclomp::DIRECT7);
@@ -82,4 +84,4 @@ boost::shared_ptr<pcl::Registration<pcl::PointXYZI, pcl::PointXYZI>> select_regi
   return nullptr;
 }
 
-}
+}  // namespace hdl_graph_slam
