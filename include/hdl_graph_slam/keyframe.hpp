@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: BSD-2-Clause
+
 #ifndef KEYFRAME_HPP
 #define KEYFRAME_HPP
 
@@ -7,10 +9,10 @@
 #include <boost/optional.hpp>
 
 namespace g2o {
-  class VertexSE3;
-  class HyperGraph;
-  class SparseOptimizer;
-}
+class VertexSE3;
+class HyperGraph;
+class SparseOptimizer;
+}  // namespace g2o
 
 namespace hdl_graph_slam {
 
@@ -41,10 +43,10 @@ public:
   boost::optional<Eigen::Vector4d> floor_coeffs;  // detected floor's coefficients
   boost::optional<Eigen::Vector3d> utm_coord;     // UTM coord obtained by GPS
 
-  boost::optional<Eigen::Vector3d> acceleration;   //
-  boost::optional<Eigen::Quaterniond> orientation; //
+  boost::optional<Eigen::Vector3d> acceleration;    //
+  boost::optional<Eigen::Quaterniond> orientation;  //
 
-  g2o::VertexSE3* node;                           // node instance
+  g2o::VertexSE3* node;  // node instance
 };
 
 /**
@@ -67,6 +69,6 @@ public:
   pcl::PointCloud<PointT>::ConstPtr cloud;  // point cloud
 };
 
-}
+}  // namespace hdl_graph_slam
 
-#endif // KEYFRAME_HPP
+#endif  // KEYFRAME_HPP
